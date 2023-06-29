@@ -1,17 +1,17 @@
+import { changeTo } from "./changeTo";
+
 export const initializeSlider = () => {
   let mainSlider = document.querySelector("#container");
   let slides = document.querySelectorAll(".slide");
-  console.log(slides);
-  let sliderWidth = mainSlider.clientWidth;
-  console.log(sliderWidth);
+  mainSlider.innerHTML = "";
 
   let newSlider = document.createElement("div");
-  newSlider.classList.add("slider");
-  newSlider.style.width = `${slides.length}00%`;
+  newSlider.id = "slider";
+  newSlider.dataset.slide = 0;
 
   let sliderDots = document.createElement("div");
   sliderDots.classList.add("dots");
-  sliderDots.innerHTML = "* * * * * *";
+  sliderDots.innerHTML = "<b>0</b> - 1 - 2";
 
   mainSlider.appendChild(sliderDots);
 
@@ -19,33 +19,42 @@ export const initializeSlider = () => {
   sliderLeft.classList.add("left");
   sliderLeft.innerHTML = "<";
 
+  sliderLeft.addEventListener("click", function () {
+    changeTo(newSlider, "-1");
+  });
+
   mainSlider.appendChild(sliderLeft);
 
   let sliderRight = document.createElement("div");
   sliderRight.classList.add("right");
   sliderRight.innerHTML = ">";
 
+  sliderRight.addEventListener("click", function () {
+    changeTo(newSlider, "+1");
+  });
+
   mainSlider.appendChild(sliderRight);
 
   let sliderCaption = document.createElement("h3");
   sliderCaption.classList.add("caption");
-  sliderCaption.innerHTML = "Picture of <b>Porsche GT3 RS</b>";
+  sliderCaption.innerHTML = `Picture of <b>${slides[0].dataset.caption}</b>`;
 
   mainSlider.appendChild(sliderCaption);
 
   //`Picture of <b>${slide.attributes["data-caption"].value}</b>`
 
-  slides.forEach((slide) => {
+  slides.forEach((slide, index) => {
     let newSlide = document.createElement("div");
     newSlide.classList.add("slide");
-    newSlide.classList.add("invisible");
+    newSlide.dataset.index = index;
 
     let slideImage = document.createElement("img");
-    slideImage.src = slide.attributes["data-image"].value;
+    slideImage.src = slide.dataset.image;
 
     newSlide.appendChild(slideImage);
-
     newSlider.appendChild(newSlide);
+
+    if (index != 0) newSlide.classList.add("invisible");
   });
 
   mainSlider.appendChild(newSlider);

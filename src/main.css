@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;700&display=swap");
 
 * {
     font-weight: 300;
@@ -27,7 +27,8 @@ h3 {
 }
 
 b {
-    font-weight: 400 !important;
+    /* font-weight: 400 !important; */
+    font-weight: 700 !important;
 }
 
 #container {
@@ -35,7 +36,7 @@ b {
     position: relative;
 }
 
-.slider {
+#slider {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,6 +50,7 @@ b {
 
 .dots {
     top: 0;
+    font-size: 1.25rem;
 }
 
 .caption {
@@ -77,6 +79,7 @@ b {
     display: flex;
     align-items: center;
     font-size: 2.5rem;
+    cursor: pointer;
 }
 
 .invisible {
