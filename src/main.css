@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap");
+
+* {
+    font-weight: 300;
+}
+
+body {
+    background: #355C7D;
+    background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);
+    background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);
+    font-family: "Inter", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-weight: 200;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+b {
+    font-weight: 400 !important;
+}
+
+#container {
+    width: 75%;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 2.5rem 0;
+}
+
+.slide {
+    padding: 0 2rem;
+}
+
+.dots {
+    top: 0;
+}
+
+.caption {
+    bottom: 0;
+}
+
+.dots, .caption {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    z-index: 50;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+}
+
+.left, .right {
+    position: absolute;
+    z-index: 50;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem;
+}
+
+.invisible {
+    display: none;
+}
