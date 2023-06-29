@@ -11,7 +11,7 @@ export const initializeSlider = () => {
 
   let sliderDots = document.createElement("div");
   sliderDots.classList.add("dots");
-  sliderDots.innerHTML = "<b>0</b> - 1 - 2";
+  sliderDots.innerHTML = [...Array(slides.length).keys()].join(" - ").replace("0", "<b>0</b>");
 
   mainSlider.appendChild(sliderDots);
 
@@ -47,6 +47,7 @@ export const initializeSlider = () => {
     let newSlide = document.createElement("div");
     newSlide.classList.add("slide");
     newSlide.dataset.index = index;
+    newSlide.dataset.caption = slide.dataset.caption;
 
     let slideImage = document.createElement("img");
     slideImage.src = slide.dataset.image;
