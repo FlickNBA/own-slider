@@ -59,4 +59,6 @@ export const initializeSlider = () => {
   });
 
   mainSlider.appendChild(newSlider);
+
+  return newSlider;
 };

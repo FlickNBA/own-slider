@@ -85,3 +85,16 @@ b {
 .invisible {
     display: none;
 }
+
+.green {
+    color: #8ac926;
+}
+
+.red {
+    color: #ff595e;
+}
+
+#S {
+    cursor: pointer;
+    text-decoration: underline;
+}
